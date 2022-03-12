@@ -1,11 +1,11 @@
 package site.kpokogujl.helpers;
 
 import io.qameta.allure.restassured.AllureRestAssured;
-import site.kpokogujl.tests.TestBaseAPI;
 
 import static io.restassured.RestAssured.given;
+import static site.kpokogujl.tests.TestBaseAPI.*;
 
-public class Auth extends TestBaseAPI {
+public class Auth {
     private final String url = API_BASE_URL + "login";
 
     public String getAuthCookie (){
