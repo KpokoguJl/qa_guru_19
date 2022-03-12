@@ -11,7 +11,6 @@ public class Auth {
     public String getAuthCookie (){
 
         return given()
-                .filter(new AllureRestAssured())
                 .contentType("application/x-www-form-urlencoded")
                 .formParam("Email", USER_LOGIN)
                 .formParam("Password", USER_PASSWORD)
