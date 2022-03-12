@@ -1,6 +1,5 @@
 package site.kpokogujl.tests;
 
-import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,7 +17,7 @@ public class TestBaseAPI {
     static void setUp(){
         TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
 
-        RestAssured.filters(CustomAllureListener.withCustomTemplates());
+//        RestAssured.filters(CustomAllureListener.withCustomTemplates());
 
         API_BASE_URL = config.getBaseUrl();
         USER_LOGIN = config.apiLogin();
