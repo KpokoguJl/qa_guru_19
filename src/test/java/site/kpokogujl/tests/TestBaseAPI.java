@@ -17,7 +17,7 @@ public class TestBaseAPI {
     static void setUp(){
         TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
 
-//        RestAssured.filters(CustomAllureListener.withCustomTemplates());
+        RestAssured.filters(CustomAllureListener.withCustomTemplates());
 
         API_BASE_URL = config.getBaseUrl();
         USER_LOGIN = config.apiLogin();
