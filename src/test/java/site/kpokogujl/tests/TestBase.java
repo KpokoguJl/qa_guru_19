@@ -12,7 +12,7 @@ import site.kpokogujl.helpers.Attach;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-public class TestBase extends TestBaseAPI{
+public class TestBase{
 
     @BeforeAll
     static void setUp(){
@@ -20,10 +20,10 @@ public class TestBase extends TestBaseAPI{
 
         TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
 
-        API_BASE_URL = config.getBaseUrl();
-        USER_LOGIN = config.apiLogin();
-        USER_PASSWORD = config.apiPassword();
-        USER_NAME = config.apiUserName();
+        TestBaseAPI.API_BASE_URL = config.getBaseUrl();
+        TestBaseAPI.USER_LOGIN = config.apiLogin();
+        TestBaseAPI.USER_PASSWORD = config.apiPassword();
+        TestBaseAPI.USER_NAME = config.apiUserName();
 
         String browserName = String.valueOf(config.getBrowser());
         String browserVersion = config.getBrowserVersion();

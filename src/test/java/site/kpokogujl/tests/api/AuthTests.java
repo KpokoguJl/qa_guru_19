@@ -1,5 +1,6 @@
 package site.kpokogujl.tests.api;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import org.junit.jupiter.api.Test;
 import site.kpokogujl.tests.TestBaseAPI;
 
@@ -19,7 +20,6 @@ public class AuthTests extends TestBaseAPI {
                 .post(url)
                 .then()
 //                .log().all()
-                .statusCode(302)
-                .extract().cookie("NOPCOMMERCE.AUTH");
+                .statusCode(302);
     }
 }

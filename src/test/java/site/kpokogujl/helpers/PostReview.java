@@ -1,5 +1,7 @@
 package site.kpokogujl.helpers;
 
+import io.qameta.allure.restassured.AllureRestAssured;
+
 import static io.restassured.RestAssured.given;
 import static site.kpokogujl.tests.TestBaseAPI.API_BASE_URL;
 

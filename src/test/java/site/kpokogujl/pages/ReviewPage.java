@@ -1,7 +1,6 @@
 package site.kpokogujl.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import io.restassured.http.Cookies;
 import org.openqa.selenium.Cookie;
 import site.kpokogujl.tests.TestBase;
 
@@ -9,6 +8,8 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static site.kpokogujl.tests.TestBaseAPI.USER_LOGIN;
+import static site.kpokogujl.tests.TestBaseAPI.USER_NAME;
 
 public class ReviewPage extends TestBase {
     SelenideElement reviewTitle = $(".product-review-list").lastChild().$(".review-title"),
