@@ -1,10 +1,10 @@
 package site.kpokogujl.tests.api;
 
-import io.qameta.allure.restassured.AllureRestAssured;
 import org.junit.jupiter.api.Test;
 import site.kpokogujl.tests.TestBaseAPI;
 
 import static io.restassured.RestAssured.given;
+import static site.kpokogujl.helpers.CustomAllureListener.withCustomTemplates;
 
 public class AuthTests extends TestBaseAPI {
     @Test
@@ -12,6 +12,7 @@ public class AuthTests extends TestBaseAPI {
         String url = API_BASE_URL + "login";
 
         given()
+                .filter(withCustomTemplates())
                 .contentType("application/x-www-form-urlencoded")
                 .formParam("Email", USER_LOGIN)
                 .formParam("Password", USER_PASSWORD)

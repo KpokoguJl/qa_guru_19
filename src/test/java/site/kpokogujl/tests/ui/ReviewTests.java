@@ -7,6 +7,8 @@ import site.kpokogujl.helpers.PostReview;
 import site.kpokogujl.pages.ReviewPage;
 import site.kpokogujl.tests.TestBase;
 
+import static io.qameta.allure.Allure.step;
+
 public class ReviewTests extends TestBase {
     Faker faker = new Faker();
 
@@ -21,12 +23,15 @@ public class ReviewTests extends TestBase {
 
         ReviewPage reviewPage = new ReviewPage();
 
-        //Авторизуюсь через API
+        step("Авторизуюсь через API");
         String cookie = auth.getAuthCookie();
-        //Оставляю отзыв через API
+
+        step("Оставляю отзыв через API");
         postReview.postReview(cookie, title, review, rating);
-        //Открываю страницу отзывов в браузере
+
+        step("Открываю страницу отзывов в браузере");
         reviewPage.openPage(cookie);
+
         //Проверяю, что созданный отзыв отображается
         reviewPage.checkResult(title, review);
     }
