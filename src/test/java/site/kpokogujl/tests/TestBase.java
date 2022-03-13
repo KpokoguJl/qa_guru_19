@@ -20,10 +20,10 @@ public class TestBase{
 
         TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
 
-        TestBaseAPI.API_BASE_URL = config.getBaseUrl();
-        TestBaseAPI.USER_LOGIN = config.apiLogin();
-        TestBaseAPI.USER_PASSWORD = config.apiPassword();
-        TestBaseAPI.USER_NAME = config.apiUserName();
+//        TestBaseAPI.API_BASE_URL = config.getBaseUrl();
+//        TestBaseAPI.USER_LOGIN = config.apiLogin();
+//        TestBaseAPI.USER_PASSWORD = config.apiPassword();
+//        TestBaseAPI.USER_NAME = config.apiUserName();
 
         String browserName = String.valueOf(config.getBrowser());
         String browserVersion = config.getBrowserVersion();

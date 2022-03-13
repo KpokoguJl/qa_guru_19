@@ -1,15 +1,13 @@
 package site.kpokogujl.helpers;
 
-import io.qameta.allure.restassured.AllureRestAssured;
+import site.kpokogujl.tests.TestBaseAPI;
 
-import static io.restassured.RestAssured.given;
-import static site.kpokogujl.tests.TestBaseAPI.API_BASE_URL;
-
-public class PostReview {
-    private final String url = API_BASE_URL + "productreviews/74";
+public class PostReview extends TestBaseAPI {
+    private final String url = "productreviews/74";
 
     public void postReview (String cookie, String title, String review, int rating){
-        given()
+
+        request()
                 .cookie("NOPCOMMERCE.AUTH", cookie)
                 .contentType("application/x-www-form-urlencoded")
                 .formParam("AddProductReview.Title", title)
